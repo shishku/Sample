@@ -1,0 +1,68 @@
+# Get Todo by ID
+GET http://localhost:8080/api/todo?id=2
+Accept: application/json
+
+###
+# Get All Todos with API Secret
+GET http://localhost:8080/api/todo/all
+Accept: application/json
+api-secret: 577f5581-6f69-4343-98c1-a2f037ef5e24
+
+###
+# Create a New Todo
+POST http://localhost:8080/api/todo
+Accept: application/json
+Content-Type: application/json
+
+{
+    "title": "New Todo",
+    "description": "This is a new todo.",
+    "done": false
+}
+
+###
+# Delete Todo by ID
+DELETE http://localhost:8080/api/todo?id=1
+Accept: application/json
+
+###
+# Edit Todo
+PUT http://localhost:8080/api/todo
+Accept: application/json
+Content-Type: application/json
+
+{
+    "id": 2,
+    "title": "Updated Todo111",
+    "description": "This is an updated todo.",
+    "done": false
+}
+
+###
+# Set Todo as Done (PATCH)
+PATCH http://localhost:8080/api/todo/finish?id=1&isDone=true
+Accept: application/json
+
+###
+# Register a New User
+POST http://localhost:8080/api/user/register
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "johndoe@example.com",
+    "password": "securePassword",
+    "secret": null
+}
+
+###
+# Get User by ID
+GET http://localhost:8080/api/user?id=1
+Accept: application/json
+
+###
+# Authenticate User
+GET http://localhost:8080/api/user/authenticate?email=johndoe@example.com&password=securePassword
+Accept: application/json
+
